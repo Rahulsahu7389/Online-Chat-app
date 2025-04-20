@@ -1,0 +1,29 @@
+server :
+npm init -y
+npm i express socket.io
+npm i --save-dev nodemon
+since the client and the server will be in the different ports so we need cors
+npm cors
+
+make app.js and change the index to app in package.json
+
+make basic template of express js
+now intergrate socket io
+
+io.on("connection",(Socket)=>{//since io used so jb bhi  user join krta so sbhi ko mssg jata
+    console.log('User Connected');
+    console.log('ID',Socket.id);
+
+    Socket.emit("welcome",`welcome to the connection ${Socket.id}`);
+    // Socket.broadcast.emit("welcome",`welcome to the connection ${Socket.id}`);--jis wale client ko reload kroge to baki me mssg jaega
+    
+    
+})
+
+
+
+
+client side
+make a react project by using . in project name
+npm install @mui/material @emotion/react @emotion/styled
+npm i socket.io-client
